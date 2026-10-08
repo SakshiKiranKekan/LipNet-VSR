@@ -7,14 +7,14 @@
 
 ---
 
-## 👥 Project Team & Institutional Information
+##  Project Team & Institutional Information
 
 | PRN No. | Student Name | Role |
 | :--- | :--- | :--- |
-| **14** | **Samarth Deepak Bhingardive** | Deep Learning & Pipeline Integration |
-| **62** | **Mayur Vijay Kale** | Computer Vision & Landmark Extraction |
-| **63** | **Sakshi Nitin Kamodkar** | Frontend UI (Gradio) & Preprocessing |
-| **66** | **Sakshi Kiran Kekan** | Model Evaluation, Benchmarking & Testing |
+| **14** | **Samarth Deepak Bhingardive** 
+| **62** | **Mayur Vijay Kale** 
+| **63** | **Sakshi Nitin Kamodkar** 
+| **66** | **Sakshi Kiran Kekan** 
 
 * **Project Guide**: **Dr. P. N. Kalavadekar**
 * **Project Coordinator**: **Dr. S. R. Deshmukh**
@@ -22,7 +22,7 @@
 
 ---
 
-## 🌍 Sustainable Development Goals (SDGs) & Social Impact
+##  Sustainable Development Goals (SDGs) & Social Impact
 
 * **Primary SDG**: **SDG 10 – Reduced Inequalities (Target 10.2)**:
   * Empowers hearing-impaired and speech-impaired individuals through an AI-powered visual speech assistive communication system that functions without relying on audio signals.
@@ -33,7 +33,7 @@
 
 ---
 
-## 🏛️ Program Outcomes (POs) & Program Specific Outcomes (PSOs) Mapping
+##  Program Outcomes (POs) & Program Specific Outcomes (PSOs) Mapping
 
 | Outcome | Level | Justification |
 | :--- | :---: | :--- |
@@ -54,7 +54,7 @@
 
 ---
 
-## 📋 Software Requirement Specifications (SRS) Compliance Matrix
+##  Software Requirement Specifications (SRS) Compliance Matrix
 
 | SRS ID | Requirement Title | Implementation Module | Description |
 | :--- | :--- | :--- | :--- |
@@ -75,7 +75,7 @@
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
                                   [ Input Video / Live Webcam ]
@@ -118,7 +118,7 @@
 
 ---
 
-## ⚙️ Installation & Setup (Windows / Linux)
+##  Installation & Setup (Windows / Linux)
 
 ### 1. Clone or Open Project
 ```powershell
@@ -141,7 +141,7 @@ The application will start at **`http://127.0.0.1:7860`**.
 
 ---
 
-## 🚀 Running Individual Components
+##  Running Individual Components
 
 ### 1. Launch Interactive Gradio Web Application
 ```powershell
@@ -160,7 +160,7 @@ python training/evaluate.py
 
 ---
 
-## 📊 Evaluation Metrics & Formulas
+##  Evaluation Metrics & Formulas
 
 1. **Character Error Rate (CER)**:
    $$\text{CER} = \frac{S + D + I}{N_{\text{chars}}}$$
