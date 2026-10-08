@@ -1108,181 +1108,479 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
 }
 
 /* ============================================================
-   AUTH PAGE — Premium Split Layout
+   AUTH PORTAL — High-End Split Studio Layout
    ============================================================ */
 
-/* Hero Section */
-.auth-hero {
-    background: linear-gradient(135deg, #0b1220 0%, #1e3a8a 45%, #4c1d95 100%);
-    border-radius: var(--radius-xl);
-    padding: 44px 52px;
-    margin-bottom: 24px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 24px 56px -16px rgba(15, 23, 42, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+/* Top Navigation Bar */
+.auth-navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: var(--card-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 12px 20px !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    transition: all 0.3s var(--transition) !important;
 }
 
-.auth-hero::before {
+.auth-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-nav-logo {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 14px var(--primary-glow);
+    flex-shrink: 0;
+}
+
+.auth-nav-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    display: block;
+    line-height: 1.2;
+}
+
+.auth-nav-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    display: block;
+    margin-top: 2px;
+}
+
+.auth-nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.auth-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--emerald-bg);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: var(--emerald-active);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.auth-status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--emerald-active);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--emerald-glow);
+    animation: pulse 1.8s infinite;
+}
+
+.auth-theme-btn {
+    border-radius: var(--radius-full) !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    padding: 6px 16px !important;
+    border: 1.5px solid var(--border-color) !important;
+    background: var(--card-surface) !important;
+    color: var(--text-main) !important;
+    transition: all 0.2s var(--transition) !important;
+    box-shadow: none !important;
+}
+
+.auth-theme-btn:hover {
+    border-color: var(--primary-blue) !important;
+    color: var(--primary-blue) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Auth Split Grid */
+.auth-portal-grid {
+    display: flex;
+    align-items: stretch !important;
+    gap: 28px !important;
+    margin-bottom: 24px !important;
+}
+
+/* Left Showcase Panel */
+.auth-showcase-panel {
+    background: linear-gradient(145deg, #070d18 0%, #0e1a33 50%, #151b2e 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: var(--radius-xl) !important;
+    padding: 38px 42px !important;
+    color: #ffffff !important;
+    box-shadow: 0 24px 64px -16px rgba(11, 18, 32, 0.45) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+.auth-showcase-panel::before {
     content: "";
     position: absolute;
-    top: -40%;
-    right: -5%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(0, 0, 0, 0) 65%);
+    top: -30%;
+    right: -20%;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(0, 0, 0, 0) 65%);
     pointer-events: none;
     animation: float 9s ease-in-out infinite;
 }
 
-.auth-hero::after {
+.auth-showcase-panel::after {
     content: "";
     position: absolute;
-    bottom: -50%;
-    right: 15%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(167, 139, 250, 0.30) 0%, rgba(0, 0, 0, 0) 65%);
+    bottom: -35%;
+    left: -15%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.30) 0%, rgba(0, 0, 0, 0) 65%);
     pointer-events: none;
     animation: float 11s ease-in-out infinite reverse;
 }
 
-.auth-hero-left {
+.auth-showcase-content {
     position: relative;
     z-index: 2;
-    max-width: 780px;
 }
 
-.auth-hero-badge {
+.auth-hero-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.10);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 6px 14px;
     border-radius: var(--radius-full);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.10em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 20px;
 }
 
-.auth-hero-title {
-    font-size: 38px;
+.auth-hero-headline {
+    font-size: 34px;
     font-weight: 800;
-    color: #ffffff;
-    line-height: 1.15;
+    line-height: 1.18;
     letter-spacing: -0.03em;
+    color: #ffffff;
     margin: 0 0 16px 0;
 }
 
-.auth-hero-gradient {
+.auth-headline-gradient {
     background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.auth-hero-subtitle {
-    font-size: 15px;
+.auth-hero-lead {
+    font-size: 14.5px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.75);
-    margin: 0 0 28px 0;
-    max-width: 560px;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 24px 0;
+    max-width: 540px;
 }
 
-.auth-hero-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+/* Simulated AI VSR Monitor */
+.auth-monitor-card {
+    background: rgba(11, 19, 36, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
     margin-bottom: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 
-.auth-feature {
+.auth-monitor-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: var(--radius-md);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.25s var(--transition);
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
 }
 
-.auth-feature:hover {
-    background: rgba(255, 255, 255, 0.10);
-    border-color: rgba(255, 255, 255, 0.20);
-    transform: translateY(-3px);
+.auth-window-dots {
+    display: flex;
+    gap: 6px;
 }
 
-.auth-feature-icon {
-    font-size: 20px;
-    width: 38px;
-    height: 38px;
+.auth-window-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-amber { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.auth-monitor-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.05em;
+}
+
+.auth-monitor-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #34d399;
+}
+
+.auth-monitor-screen {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.auth-lip-roi-box {
+    width: 140px;
+    height: 85px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px dashed rgba(96, 165, 250, 0.5);
+    border-radius: 8px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.10);
-    border-radius: var(--radius-sm);
     flex-shrink: 0;
-}
-
-.auth-feature-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-}
-
-.auth-feature-desc {
-    font-size: 11.5px;
-    color: rgba(255, 255, 255, 0.60);
-    margin-top: 3px;
-    line-height: 1.3;
-}
-
-.auth-hero-footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.70);
-}
-
-.auth-dot {
-    width: 8px;
-    height: 8px;
-    background: #34d399;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.25);
-    animation: pulse 2s infinite;
-}
-
-/* Auth Split Row */
-.auth-split-row {
-    margin-top: 0 !important;
-    gap: 24px !important;
-}
-
-/* Form Column — Elevated Card Look */
-.auth-form-col {
-    background: var(--card-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-xl);
-    padding: 38px 42px !important;
-    box-shadow: var(--card-shadow);
-    position: relative;
     overflow: hidden;
 }
 
-.auth-form-col::before {
+.roi-crosshair {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: #60a5fa;
+    border-style: solid;
+}
+
+.ch-tl { top: 3px; left: 3px; border-width: 2px 0 0 2px; }
+.ch-tr { top: 3px; right: 3px; border-width: 2px 2px 0 0; }
+.ch-bl { bottom: 3px; left: 3px; border-width: 0 0 2px 2px; }
+.ch-br { bottom: 3px; right: 3px; border-width: 0 2px 2px 0; }
+
+.roi-label {
+    position: absolute;
+    bottom: 4px;
+    left: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #60a5fa;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.roi-mouth-mesh {
+    width: 58px;
+    height: 26px;
+    border: 1.5px solid #a78bfa;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.4);
+    animation: mouthPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes mouthPulse {
+    0%, 100% { transform: scale(1); border-color: #a78bfa; box-shadow: 0 0 8px rgba(167, 139, 250, 0.3); }
+    50% { transform: scale(1.12, 1.25); border-color: #34d399; box-shadow: 0 0 14px rgba(52, 211, 153, 0.5); }
+}
+
+.auth-telemetry-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.telemetry-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+}
+
+.telemetry-key {
+    color: rgba(255, 255, 255, 0.62);
+    font-weight: 600;
+}
+
+.telemetry-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.val-active {
+    color: #34d399 !important;
+}
+
+.wave-equalizer {
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    height: 14px;
+}
+
+.eq-bar {
+    width: 3px;
+    background: #60a5fa;
+    border-radius: 2px;
+    animation: eqAnim 1.2s ease-in-out infinite alternate;
+}
+
+.eq-bar:nth-child(1) { height: 6px; animation-delay: 0.1s; }
+.eq-bar:nth-child(2) { height: 12px; animation-delay: 0.3s; }
+.eq-bar:nth-child(3) { height: 14px; animation-delay: 0.2s; }
+.eq-bar:nth-child(4) { height: 8px; animation-delay: 0.4s; }
+.eq-bar:nth-child(5) { height: 13px; animation-delay: 0.25s; }
+.eq-bar:nth-child(6) { height: 10px; animation-delay: 0.15s; }
+.eq-bar:nth-child(7) { height: 5px; animation-delay: 0.35s; }
+
+@keyframes eqAnim {
+    0% { height: 3px; }
+    100% { height: 14px; }
+}
+
+.auth-transcript-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.transcript-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 800;
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.transcript-phrase {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    flex: 1;
+}
+
+.transcript-conf {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #34d399;
+}
+
+/* 3 Quick Features */
+.auth-mini-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.auth-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s var(--transition);
+}
+
+.auth-mini-card:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.20);
+    transform: translateY(-2px);
+}
+
+.mini-icon {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.mini-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+}
+
+.mini-desc {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.58);
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+/* Right Form Panel */
+.auth-form-panel {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.auth-card {
+    background: var(--card-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-xl) !important;
+    padding: 34px 38px !important;
+    box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px var(--border-color) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+.auth-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1292,76 +1590,162 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
     background: linear-gradient(90deg, #3b82f6, #8b5cf6, #10b981);
 }
 
-/* Auth Tabs */
-.auth-tabs .tab-nav {
+/* Tabs inside Auth Card */
+.auth-card .tab-nav {
+    border-bottom: 1.5px solid var(--border-color) !important;
+    gap: 8px !important;
     margin-bottom: 22px !important;
-    border-bottom: 1px solid var(--border-color) !important;
+    padding-bottom: 2px !important;
 }
 
-.auth-tabs .tab-nav button {
-    font-size: 13.5px !important;
-    padding: 10px 16px !important;
+.auth-card .tab-nav button {
+    font-size: 14px !important;
     font-weight: 700 !important;
+    padding: 10px 18px !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-muted) !important;
+    transition: all 0.2s var(--transition) !important;
 }
 
-/* Form Header */
-.auth-form-header {
-    margin-bottom: 24px;
+.auth-card .tab-nav button:hover {
+    color: var(--text-main) !important;
+    background: var(--bg-subtle) !important;
 }
 
-.auth-form-title {
-    font-size: 24px;
+.auth-card .tab-nav button.selected {
+    color: var(--primary-blue) !important;
+    background: var(--primary-light) !important;
+}
+
+.auth-card-header {
+    margin-bottom: 20px;
+}
+
+.auth-card-title {
+    font-size: 22px;
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.025em;
     margin: 0 0 6px 0;
 }
 
-.auth-form-subtitle {
-    font-size: 13.5px;
+.auth-card-subtitle {
+    font-size: 13px;
     color: var(--text-muted);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
-/* Auth Inputs */
-.auth-input input {
-    font-size: 14.5px !important;
-    padding: 13px 16px !important;
+/* Input Fields */
+.auth-input-field {
+    margin-bottom: 14px !important;
+}
+
+.auth-input-field input {
+    font-size: 14px !important;
+    padding: 12px 16px !important;
     border-radius: var(--radius-md) !important;
     background: var(--bg-subtle) !important;
-    border: 1.5px solid transparent !important;
+    border: 1.5px solid var(--border-color) !important;
+    color: var(--text-main) !important;
     transition: all 0.2s var(--transition) !important;
 }
 
-.auth-input input:focus {
+.auth-input-field input:focus {
     background: var(--card-surface) !important;
     border-color: var(--primary-blue) !important;
     box-shadow: 0 0 0 4px var(--primary-glow) !important;
 }
 
-.auth-input label {
+.auth-input-field label {
     font-size: 12.5px !important;
     font-weight: 700 !important;
     color: var(--text-main) !important;
-    letter-spacing: 0.01em !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 5px !important;
 }
 
-/* Primary Auth Button */
+/* Quick Demo Box */
+.auth-demo-badge-row {
+    background: var(--bg-subtle) !important;
+    border: 1px dashed var(--border-hover) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 10px 14px !important;
+    margin: 6px 0 16px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+}
+
+.auth-quick-creds {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.demo-chip-icon {
+    font-size: 15px;
+}
+
+.demo-chip-label {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.demo-chip-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    background: var(--card-surface);
+    color: var(--primary-blue);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.demo-chip-sep {
+    color: var(--text-light);
+}
+
+.auth-btn-quick-fill {
+    background: var(--card-surface) !important;
+    color: var(--primary-blue) !important;
+    border: 1px solid var(--primary-blue) !important;
+    border-radius: var(--radius-sm) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    padding: 5px 12px !important;
+    transition: all 0.2s var(--transition) !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+.auth-btn-quick-fill:hover {
+    background: var(--primary-blue) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px var(--primary-glow) !important;
+}
+
+/* Primary Button */
 .auth-btn-primary {
     background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    font-size: 15px !important;
+    font-size: 14.5px !important;
     border-radius: var(--radius-md) !important;
-    padding: 15px 24px !important;
-    box-shadow: 0 4px 16px var(--primary-glow), 0 0 0 1px rgba(255,255,255,0.08) inset !important;
+    padding: 14px 24px !important;
+    box-shadow: 0 4px 16px var(--primary-glow), 0 0 0 1px rgba(255,255,255,0.1) inset !important;
     transition: all 0.25s var(--transition) !important;
     border: none !important;
     width: 100% !important;
-    position: relative;
-    overflow: hidden;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    margin-top: 4px !important;
 }
 
 .auth-btn-primary::before {
@@ -1377,11 +1761,15 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
 
 .auth-btn-primary:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 28px var(--primary-glow), 0 0 0 1px rgba(255,255,255,0.12) inset !important;
+    box-shadow: 0 8px 26px var(--primary-glow), 0 0 0 1px rgba(255,255,255,0.15) inset !important;
 }
 
 .auth-btn-primary:hover::before {
     left: 100%;
+}
+
+.auth-btn-primary:active {
+    transform: translateY(0) !important;
 }
 
 /* Guest Button */
@@ -1389,12 +1777,13 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
     background: var(--card-surface) !important;
     color: var(--text-main) !important;
     font-weight: 700 !important;
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     border: 1.5px solid var(--border-color) !important;
     border-radius: var(--radius-md) !important;
-    padding: 14px 24px !important;
+    padding: 12px 20px !important;
     transition: all 0.25s var(--transition) !important;
     width: 100% !important;
+    cursor: pointer !important;
 }
 
 .auth-btn-guest:hover {
@@ -1402,30 +1791,19 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
     border-color: var(--primary-blue) !important;
     color: var(--primary-blue) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px var(--primary-glow) !important;
-}
-
-/* Button Rows */
-.auth-btn-row {
-    margin-top: 8px !important;
-    margin-bottom: 4px !important;
-    gap: 10px !important;
+    box-shadow: 0 4px 16px var(--primary-glow) !important;
 }
 
 /* Divider */
-.auth-divider-row {
-    margin: 10px 0 !important;
-}
-
 .auth-divider {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 8px 0;
+    margin: 12px 0 10px 0;
     color: var(--text-light);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.10em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
@@ -1437,100 +1815,80 @@ footer, .gradio-container footer, a[href*="api"], a[href*="docs"], .api-docs, .s
     background: var(--border-color);
 }
 
-/* Demo Credentials Card */
-.auth-demo-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-violet-light) 100%);
-    border: 1px solid rgba(37, 99, 235, 0.15);
-    border-radius: var(--radius-md);
-    padding: 14px 18px;
-    margin-top: 20px;
-}
-
-.auth-demo-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-}
-
-.auth-demo-content {
-    flex: 1;
-}
-
-.auth-demo-title {
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--primary-blue);
-    margin-bottom: 6px;
-}
-
-.auth-demo-creds {
+/* Password criteria pills */
+.auth-pwd-criteria {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    margin: 4px 0 16px 0;
 }
 
-.auth-cred-pill {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+.crit-pill {
+    font-size: 11px;
     font-weight: 600;
-    background: var(--card-surface);
-    color: var(--text-main);
-    padding: 4px 10px;
-    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    background: var(--bg-subtle);
     border: 1px solid var(--border-color);
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
 }
 
-/* Terms text */
+/* Card bottom trust badge */
+.auth-card-footer-pill {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Terms */
 .auth-terms {
     text-align: center;
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--text-muted);
-    margin-top: 20px;
-    line-height: 1.6;
+    margin-top: 16px;
+    line-height: 1.5;
 }
 
-.auth-terms a {
-    color: var(--primary-blue);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s var(--transition);
-}
-
-.auth-terms a:hover {
-    color: var(--primary-hover);
-    text-decoration: underline;
-}
-
-/* Responsive Auth Layout */
-@media (max-width: 1100px) {
-    .auth-hero-features {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 900px) {
-    .auth-hero {
-        padding: 32px 24px;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .auth-portal-grid {
+        flex-direction: column !important;
     }
     
-    .auth-hero-title {
+    .auth-showcase-panel {
+        padding: 30px !important;
+    }
+    
+    .auth-hero-headline {
         font-size: 26px;
     }
     
-    .auth-hero-subtitle {
-        font-size: 14px;
+    .auth-card {
+        padding: 26px 22px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .auth-navbar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
     }
     
-    .auth-form-col {
-        padding: 28px 22px !important;
+    .auth-mini-features {
+        grid-template-columns: 1fr;
     }
     
-    .auth-form-title {
-        font-size: 20px;
+    .auth-monitor-screen {
+        flex-direction: column;
+    }
+    
+    .auth-lip-roi-box {
+        width: 100%;
     }
 }
 """
@@ -1559,8 +1917,272 @@ init_theme_js = """
 """
 
 with gr.Blocks(title="LipNet: Visual Speech Recognition from Lip Movements Using Deep Learning") as demo:
-    # Header Banner
-    with gr.Column():
+    # ==========================================================================
+    # 1. Authentication View (Login / Signup Screen) — High-End Split Studio
+    # ==========================================================================
+    with gr.Column(visible=True) as auth_view:
+        # Top Navigation & Status Bar
+        with gr.Row(elem_classes=["auth-navbar"]):
+            with gr.Column(scale=8):
+                gr.HTML(
+                    """
+                    <div class="auth-nav-brand">
+                        <div class="auth-nav-logo">👄</div>
+                        <div>
+                            <span class="auth-nav-title">LipNet</span>
+                            <span class="auth-nav-tag">Visual Speech Recognition from Deep Learning</span>
+                        </div>
+                    </div>
+                    """
+                )
+            with gr.Column(scale=4, elem_classes=["auth-nav-actions"]):
+                with gr.Row():
+                    gr.HTML(
+                        """
+                        <div class="auth-status-pill">
+                            <span class="auth-status-dot"></span>
+                            <span>Neural Engine Ready</span>
+                        </div>
+                        """
+                    )
+                    btn_auth_theme = gr.Button("🌓 Theme", size="sm", elem_classes=["auth-theme-btn"])
+
+        # Main Split Grid: Left AI Showcase + Right Auth Portal
+        with gr.Row(elem_classes=["auth-portal-grid"]):
+            # Left Showcase Panel
+            with gr.Column(scale=6, elem_classes=["auth-showcase-panel"]):
+                gr.HTML(
+                    """
+                    <div class="auth-showcase-content">
+                        <div class="auth-hero-pill">
+                            <span>✨</span>
+                            <span>3D-CNN & CTC Beam Architecture</span>
+                        </div>
+                        
+                        <h1 class="auth-hero-headline">
+                            Decode Silent Speech<br>
+                            <span class="auth-headline-gradient">From Facial Motion.</span>
+                        </h1>
+                        
+                        <p class="auth-hero-lead">
+                            State-of-the-art visual speech recognition using spatiotemporal convolutions,
+                            bidirectional GRUs, and Connectionist Temporal Classification (CTC).
+                            Transcribe natural speech with zero acoustic microphone input.
+                        </p>
+                        
+                        <!-- Simulated Real-Time AI Monitor Mockup -->
+                        <div class="auth-monitor-card">
+                            <div class="auth-monitor-header">
+                                <div class="auth-window-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-amber"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <div class="auth-monitor-title">LIVE VSR INFERENCE MONITOR</div>
+                                <div class="auth-monitor-status">● 25 FPS REC</div>
+                            </div>
+                            
+                            <div class="auth-monitor-screen">
+                                <div class="auth-lip-roi-box">
+                                    <div class="roi-crosshair ch-tl"></div>
+                                    <div class="roi-crosshair ch-tr"></div>
+                                    <div class="roi-crosshair ch-bl"></div>
+                                    <div class="roi-crosshair ch-br"></div>
+                                    <div class="roi-label">LIP_ROI • 46x96</div>
+                                    <div class="roi-mouth-mesh"></div>
+                                </div>
+                                
+                                <div class="auth-telemetry-panel">
+                                    <div class="telemetry-row">
+                                        <span class="telemetry-key">Speaker Detection:</span>
+                                        <span class="telemetry-val val-active">ACTIVE (MAR 0.038)</span>
+                                    </div>
+                                    <div class="telemetry-row">
+                                        <span class="telemetry-key">Beam Decoder:</span>
+                                        <span class="telemetry-val">Width 15 • 34ms</span>
+                                    </div>
+                                    <div class="telemetry-row">
+                                        <span class="telemetry-key">Viseme Wave:</span>
+                                        <div class="wave-equalizer">
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                            <span class="eq-bar"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="auth-transcript-bar">
+                                <div class="transcript-tag">RECOGNIZED</div>
+                                <div class="transcript-phrase">"place blue by f six now"</div>
+                                <div class="transcript-conf">97.8% Conf</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 3 Quick Capabilities -->
+                        <div class="auth-mini-features">
+                            <div class="auth-mini-card">
+                                <div class="mini-icon">👥</div>
+                                <div>
+                                    <div class="mini-title">Multi-Speaker VSR</div>
+                                    <div class="mini-desc">Spatiotemporal face tracking</div>
+                                </div>
+                            </div>
+                            <div class="auth-mini-card">
+                                <div class="mini-icon">🧠</div>
+                                <div>
+                                    <div class="mini-title">CTC Beam Search</div>
+                                    <div class="mini-desc">LM-guided candidate decoding</div>
+                                </div>
+                            </div>
+                            <div class="auth-mini-card">
+                                <div class="mini-icon">🔒</div>
+                                <div>
+                                    <div class="mini-title">Encrypted Storage</div>
+                                    <div class="mini-desc">Salted SHA-256 SQLite Auth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    """
+                )
+
+            # Right Auth Form Panel
+            with gr.Column(scale=5, elem_classes=["auth-form-panel"]):
+                with gr.Column(elem_classes=["auth-card"]):
+                    with gr.Tabs(elem_classes=["auth-tabs"]):
+                        # Sign In Tab
+                        with gr.TabItem("🔐 Sign In"):
+                            gr.HTML(
+                                """
+                                <div class="auth-card-header">
+                                    <h2 class="auth-card-title">Welcome back</h2>
+                                    <p class="auth-card-subtitle">Sign in to your LipNet VSR Studio workspace</p>
+                                </div>
+                                """
+                            )
+                            login_user = gr.Textbox(
+                                label="Username",
+                                placeholder="Enter your username (e.g. admin)",
+                                elem_classes=["auth-input-field"]
+                            )
+                            login_pass = gr.Textbox(
+                                label="Password",
+                                type="password",
+                                placeholder="Enter your password",
+                                elem_classes=["auth-input-field"]
+                            )
+                            
+                            with gr.Row(elem_classes=["auth-demo-badge-row"]):
+                                gr.HTML(
+                                    """
+                                    <div class="auth-quick-creds">
+                                        <span class="demo-chip-icon">💡</span>
+                                        <span class="demo-chip-label">Demo:</span>
+                                        <code class="demo-chip-val">admin</code>
+                                        <span class="demo-chip-sep">/</span>
+                                        <code class="demo-chip-val">admin123</code>
+                                    </div>
+                                    """
+                                )
+                                btn_fill_demo = gr.Button("⚡ Fill Demo", size="sm", elem_classes=["auth-btn-quick-fill"])
+                            
+                            btn_login = gr.Button(
+                                "🚀 Sign In to Studio →",
+                                variant="primary",
+                                size="lg",
+                                elem_classes=["auth-btn-primary"]
+                            )
+                            
+                            gr.HTML('<div class="auth-divider"><span>or test without account</span></div>')
+                            
+                            btn_guest = gr.Button(
+                                "⚡ Continue as Guest (Demo Mode)",
+                                variant="secondary",
+                                size="lg",
+                                elem_classes=["auth-btn-guest"]
+                            )
+                            
+                            login_status = gr.HTML()
+
+                        # Sign Up Tab
+                        with gr.TabItem("✨ Create Account"):
+                            gr.HTML(
+                                """
+                                <div class="auth-card-header">
+                                    <h2 class="auth-card-title">Create Studio Account</h2>
+                                    <p class="auth-card-subtitle">Get started with full studio access in seconds</p>
+                                </div>
+                                """
+                            )
+                            reg_name = gr.Textbox(
+                                label="Full Name",
+                                placeholder="e.g. Sakshi Kekan",
+                                elem_classes=["auth-input-field"]
+                            )
+                            reg_user = gr.Textbox(
+                                label="Username",
+                                placeholder="Choose a unique username",
+                                elem_classes=["auth-input-field"]
+                            )
+                            with gr.Row():
+                                reg_pass = gr.Textbox(
+                                    label="Password",
+                                    type="password",
+                                    placeholder="Create password",
+                                    elem_classes=["auth-input-field"]
+                                )
+                                reg_confirm = gr.Textbox(
+                                    label="Confirm Password",
+                                    type="password",
+                                    placeholder="Repeat password",
+                                    elem_classes=["auth-input-field"]
+                                )
+                            
+                            gr.HTML(
+                                """
+                                <div class="auth-pwd-criteria">
+                                    <span class="crit-pill">🔒 Salted SHA-256</span>
+                                    <span class="crit-pill">✓ Min. 4 characters</span>
+                                    <span class="crit-pill">✓ Case sensitive</span>
+                                </div>
+                                """
+                            )
+                            
+                            btn_signup = gr.Button(
+                                "✨ Create Account →",
+                                variant="primary",
+                                size="lg",
+                                elem_classes=["auth-btn-primary"]
+                            )
+                            
+                            signup_status = gr.HTML()
+                            
+                            gr.HTML(
+                                """
+                                <div class="auth-terms">
+                                    By registering, you agree to local studio usage & privacy standards. Data remains 100% on this machine.
+                                </div>
+                                """
+                            )
+
+                    gr.HTML(
+                        """
+                        <div class="auth-card-footer-pill">
+                            <span>🛡️ End-to-End Local Processing • SQLite Database • Zero Cloud Upload</span>
+                        </div>
+                        """
+                    )
+
+    # ==========================================================================
+    # 2. Main Application View (Desktop-Optimized Studio)
+    # ==========================================================================
+    with gr.Column(visible=False) as main_app_view:
+        # Header Banner
         gr.HTML(
             """
             <div class="inst-header-wrapper">
@@ -1569,175 +2191,6 @@ with gr.Blocks(title="LipNet: Visual Speech Recognition from Lip Movements Using
             </div>
             """
         )
-
-    # ==========================================================================
-    # 1. Authentication View (Login / Signup Screen) — Premium Split Layout
-    # ==========================================================================
-    with gr.Column(visible=True) as auth_view:
-        # Hero Section (Full-width intro banner)
-        gr.HTML(
-            """
-            <div class="auth-hero">
-                <div class="auth-hero-left">
-                    <div class="auth-hero-badge">🔒 Secure Access Portal</div>
-                    <h1 class="auth-hero-title">
-                        Visual Speech<br>
-                        <span class="auth-hero-gradient">Recognition Studio</span>
-                    </h1>
-                    <p class="auth-hero-subtitle">
-                        Decode silent speech from lip movements using state-of-the-art deep learning.
-                        Sign in to access the full studio, analytics dashboard, and export tools.
-                    </p>
-                    <div class="auth-hero-features">
-                        <div class="auth-feature">
-                            <div class="auth-feature-icon">🎬</div>
-                            <div>
-                                <div class="auth-feature-title">Multi-Speaker VSR</div>
-                                <div class="auth-feature-desc">Real-time lip reading with tracking</div>
-                            </div>
-                        </div>
-                        <div class="auth-feature">
-                            <div class="auth-feature-icon">🧠</div>
-                            <div>
-                                <div class="auth-feature-title">CTC Beam Decoder</div>
-                                <div class="auth-feature-desc">High-precision recognition</div>
-                            </div>
-                        </div>
-                        <div class="auth-feature">
-                            <div class="auth-feature-icon">📊</div>
-                            <div>
-                                <div class="auth-feature-title">Live Analytics</div>
-                                <div class="auth-feature-desc">Exportable transcripts</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="auth-hero-footer">
-                        <span class="auth-dot"></span>
-                        <span>All systems operational</span>
-                    </div>
-                </div>
-            </div>
-            """
-        )
-        
-        # Auth form (Centered card)
-        with gr.Row(elem_classes=["auth-split-row"]):
-            with gr.Column(scale=1):
-                pass
-            with gr.Column(scale=2, elem_classes=["auth-form-col"]):
-                with gr.Tabs(elem_classes=["auth-tabs"]):
-                    # Sign In Tab
-                    with gr.TabItem("🔐 Sign In"):
-                        gr.HTML(
-                            """
-                            <div class="auth-form-header">
-                                <h2 class="auth-form-title">Welcome back</h2>
-                                <p class="auth-form-subtitle">Sign in to continue to your studio workspace</p>
-                            </div>
-                            """
-                        )
-                        login_user = gr.Textbox(
-                            label="Username",
-                            placeholder="Enter your username",
-                            elem_classes=["auth-input"]
-                        )
-                        login_pass = gr.Textbox(
-                            label="Password",
-                            type="password",
-                            placeholder="Enter your password",
-                            elem_classes=["auth-input"]
-                        )
-                        
-                        with gr.Row(elem_classes=["auth-btn-row"]):
-                            btn_login = gr.Button(
-                                "Sign In →",
-                                variant="primary",
-                                size="lg",
-                                elem_classes=["auth-btn-primary"]
-                            )
-                        
-                        with gr.Row(elem_classes=["auth-divider-row"]):
-                            gr.HTML('<div class="auth-divider"><span>or</span></div>')
-                        
-                        btn_guest = gr.Button(
-                            "⚡ Continue as Guest (Demo Mode)",
-                            variant="secondary",
-                            size="lg",
-                            elem_classes=["auth-btn-guest"]
-                        )
-
-                        login_status = gr.HTML()
-                        
-                        gr.HTML(
-                            """
-                            <div class="auth-demo-card">
-                                <div class="auth-demo-icon">💡</div>
-                                <div class="auth-demo-content">
-                                    <div class="auth-demo-title">Use Demo Account</div>
-                                    <div class="auth-demo-creds">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            """
-                        )
-
-                    # Sign Up Tab
-                    with gr.TabItem("📝 Create Account"):
-                        gr.HTML(
-                            """
-                            <div class="auth-form-header">
-                                <h2 class="auth-form-title">Create your account</h2>
-                                <p class="auth-form-subtitle">Get started with full access in under 30 seconds</p>
-                            </div>
-                            """
-                        )
-                        reg_name = gr.Textbox(
-                            label="Full Name",
-                            placeholder="e.g. Samarth Bhingardive",
-                            elem_classes=["auth-input"]
-                        )
-                        reg_user = gr.Textbox(
-                            label="Username",
-                            placeholder="Choose a unique username",
-                            elem_classes=["auth-input"]
-                        )
-                        with gr.Row():
-                            reg_pass = gr.Textbox(
-                                label="Password",
-                                type="password",
-                                placeholder="Create password",
-                                elem_classes=["auth-input"]
-                            )
-                            reg_confirm = gr.Textbox(
-                                label="Confirm Password",
-                                type="password",
-                                placeholder="Repeat password",
-                                elem_classes=["auth-input"]
-                            )
-                        btn_signup = gr.Button(
-                            "Create Account →",
-                            variant="primary",
-                            size="lg",
-                            elem_classes=["auth-btn-primary"]
-                        )
-                        signup_status = gr.HTML()
-                        
-                        gr.HTML(
-                            """
-                            <div class="auth-terms">
-                                By creating an account, you agree to our 
-                                <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-                            </div>
-                            """
-                        )
-            with gr.Column(scale=1):
-                pass
-
-    # ==========================================================================
-    # 2. Main Application View (Desktop-Optimized Studio)
-    # ==========================================================================
-    with gr.Column(visible=False) as main_app_view:
         # Top User Status Bar with Theme & Logout Controls
         with gr.Row():
             with gr.Column(scale=8):
@@ -1897,10 +2350,35 @@ with gr.Blocks(title="LipNet: Visual Speech Recognition from Lip Movements Using
         js=theme_toggle_js
     )
 
+    btn_auth_theme.click(
+        fn=None,
+        inputs=[],
+        outputs=[btn_auth_theme],
+        js=theme_toggle_js
+    )
+
     # ==========================================================================
     # Event Wiring: Authentication
     # ==========================================================================
+    btn_fill_demo.click(
+        fn=lambda: ("admin", "admin123"),
+        inputs=[],
+        outputs=[login_user, login_pass]
+    )
+
     btn_login.click(
+        fn=handle_login,
+        inputs=[login_user, login_pass],
+        outputs=[auth_view, main_app_view, user_info_display, login_status]
+    )
+
+    login_pass.submit(
+        fn=handle_login,
+        inputs=[login_user, login_pass],
+        outputs=[auth_view, main_app_view, user_info_display, login_status]
+    )
+
+    login_user.submit(
         fn=handle_login,
         inputs=[login_user, login_pass],
         outputs=[auth_view, main_app_view, user_info_display, login_status]
@@ -1913,6 +2391,12 @@ with gr.Blocks(title="LipNet: Visual Speech Recognition from Lip Movements Using
     )
 
     btn_signup.click(
+        fn=handle_signup,
+        inputs=[reg_name, reg_user, reg_pass, reg_confirm],
+        outputs=[signup_status]
+    )
+
+    reg_confirm.submit(
         fn=handle_signup,
         inputs=[reg_name, reg_user, reg_pass, reg_confirm],
         outputs=[signup_status]
@@ -1959,4 +2443,8 @@ with gr.Blocks(title="LipNet: Visual Speech Recognition from Lip Movements Using
 
 
 if __name__ == "__main__":
-    demo.launch(server_name="127.0.0.1", server_port=7860, share=False, css=custom_css)
+    try:
+        demo.launch(server_name="127.0.0.1", server_port=7860, share=False, css=custom_css)
+    except OSError:
+        # Fallback to next available port if 7860 is occupied
+        demo.launch(server_name="127.0.0.1", share=False, css=custom_css)
