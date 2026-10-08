@@ -9,8 +9,8 @@
 
 ##  Project Team & Institutional Information
 
-| PRN No. | Student Name | Role |
-| :--- | :--- | :--- |
+| PRN No. | Student Name 
+| :--- | :--- | 
 | **14** | **Samarth Deepak Bhingardive** 
 | **62** | **Mayur Vijay Kale** 
 | **63** | **Sakshi Nitin Kamodkar** 
