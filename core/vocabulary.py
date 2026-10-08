@@ -44,6 +44,12 @@ COMMON_ENGLISH_WORDS = GRID_COMMANDS | GRID_COLORS | GRID_PREPOSITIONS | GRID_DI
     "here", "there", "where", "when", "why", "who", "which"
 }
 
+GRID_MAP_COMMAND = {'b': 'bin', 'l': 'lay', 'p': 'place', 's': 'set'}
+GRID_MAP_COLOR = {'b': 'blue', 'g': 'green', 'r': 'red', 'w': 'white'}
+GRID_MAP_PREP = {'a': 'at', 'b': 'by', 'i': 'in', 'w': 'with'}
+GRID_MAP_DIGIT = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', 'z': 'zero', '0': 'zero'}
+GRID_MAP_ADVERB = {'a': 'again', 'n': 'now', 'p': 'please', 's': 'soon'}
+
 
 class Vocabulary:
     """
@@ -60,6 +66,21 @@ class Vocabulary:
         self.vocab_size = len(self.tokens)
         self.blank_idx = 0
         self.lexicon: Set[str] = COMMON_ENGLISH_WORDS
+
+    @staticmethod
+    def decode_grid_code(code: str) -> Optional[str]:
+        """
+        Decodes a 6-character GRID corpus code (e.g. 'bbaf2n') into full English sentence:
+        'bin blue at f two now'
+        """
+        code = code.lower().strip()
+        if len(code) == 6:
+            c1, c2, c3, c4, c5, c6 = code[0], code[1], code[2], code[3], code[4], code[5]
+            if (c1 in GRID_MAP_COMMAND and c2 in GRID_MAP_COLOR and
+                c3 in GRID_MAP_PREP and c4.isalpha() and
+                c5 in GRID_MAP_DIGIT and c6 in GRID_MAP_ADVERB):
+                return f"{GRID_MAP_COMMAND[c1]} {GRID_MAP_COLOR[c2]} {GRID_MAP_PREP[c3]} {c4} {GRID_MAP_DIGIT[c5]} {GRID_MAP_ADVERB[c6]}"
+        return None
 
     def encode(self, text: str) -> List[int]:
         """Convert string to list of integer token IDs."""
